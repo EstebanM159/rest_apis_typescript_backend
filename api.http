@@ -1,0 +1,8 @@
+POST http://localhost:4000/api/products
+Content-Type: application/json
+
+{
+    "name":"Monitor",
+    "price": 300,
+    "availability":true
+}
