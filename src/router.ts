@@ -7,7 +7,7 @@ const router = Router()
  * @swagger
  * components:
  *     schemas:
- *           Product:               
+ *           Product:
  *                type: object
  *                properties:
  *                  id:
@@ -26,8 +26,8 @@ const router = Router()
  *                     type: boolean
  *                     description: The product availability
  *                     example: true
- * 
- * 
+ *
+ *
  */
 
 /**
@@ -41,13 +41,13 @@ const router = Router()
  *    responses:
  *        200:
  *            description: Successful response
- *            content: 
+ *            content:
  *              application/json:
  *                schema:
  *                 type: array
  *                 items:
  *                    $ref: '#/components/schemas/Product'
- * 
+ *
  */
 router.get('/', getProducts)
 /**
@@ -63,9 +63,9 @@ router.get('/', getProducts)
  *          name: id
  *          description: The ID of the product to retrieve
  *          requiered: true
- *          schema: 
+ *          schema:
  *            type: integer
- *       responses: 
+ *       responses:
  *          200:
  *              description: Succesful response
  *              content:
@@ -76,7 +76,7 @@ router.get('/', getProducts)
  *              description: Bad request - Invalid Id
  *          404:
  *              description: Not Found
- * 
+ *
  */
 router.get('/:id',
   param('id').isInt().withMessage('ID no valido'),
@@ -95,7 +95,7 @@ router.get('/:id',
  *      required: true
  *      content:
  *          application/json:
- *            schema: 
+ *            schema:
  *                type: object
  *                properties:
  *                    name:
@@ -137,13 +137,13 @@ router.post('/',
  *          name: id
  *          description: The ID of the product to retrieve
  *          requiered: true
- *          schema: 
+ *          schema:
  *            type: integer
  *    requestBody:
  *          required: true
  *          content:
  *              application/json:
- *                schema: 
+ *                schema:
  *                    type: object
  *                    properties:
  *                        name:
@@ -166,10 +166,10 @@ router.post('/',
  *        description: Bad request - invalid ID or invalid input data
  *      404:
  *        description: Not found
- *        
- *        
- *      
- * 
+ *
+ *
+ *
+ *
  */
 router.put('/:id',
   param('id').isInt().withMessage('ID no valido'),
@@ -196,7 +196,7 @@ router.put('/:id',
  *          name: id
  *          description: The ID of the product to retrieve
  *          requiered: true
- *          schema: 
+ *          schema:
  *            type: integer
  *    responses:
  *      200:
@@ -206,14 +206,14 @@ router.put('/:id',
  *            schema:
  *              $ref: '#/components/schemas/Product'
  *      400:
- *        description: Bad request - invalid ID 
+ *        description: Bad request - invalid ID
  *      404:
  *        description: Not found
- * 
- * 
- * 
+ *
+ *
+ *
  */
-router.patch('/:id', 
+router.patch('/:id',
   param('id').isInt().withMessage('ID no valido'),
   handleInputErrors,
   updateAvailability
@@ -245,9 +245,9 @@ router.patch('/:id',
  *        description: Bad request - invalid ID
  *      404:
  *        description: Not found
- * 
- * 
- * 
+ *
+ *
+ *
  */
 router.delete('/:id',
   param('id').isInt().withMessage('ID no valido'),
